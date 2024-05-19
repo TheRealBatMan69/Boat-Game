@@ -44,6 +44,10 @@ public class SubmarineMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(1, 0, 0) * Time.deltaTime * sideSpeed, Space.World);
         }
+        if (Input.GetKey("s"))
+        {
+            transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * sideSpeed, Space.World);
+        }
         if (Input.GetKey("space") && !thrusterWait)
         {
             _RigidBody.AddForce(Vector2.up * thrusterSpeed);
