@@ -12,12 +12,11 @@ public class SubmarineMovement : MonoBehaviour
     public float thrusterWaitTime;
     public bool thrusterWait = false;
 
-    private Rigidbody2D _RigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        _RigidBody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -36,6 +35,10 @@ public class SubmarineMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (transform.position.y < 0)
+        {
+            transform.SetPositionAndRotation(new Vector3(0, 0, 0));
+        }
         if (Input.GetKey("a"))
         {
             transform.Translate(new Vector3(-1, 0, 0) * Time.deltaTime * sideSpeed, Space.World);
@@ -48,10 +51,11 @@ public class SubmarineMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * sideSpeed, Space.World);
         }
-        if (Input.GetKey("space") && !thrusterWait)
+        if (Input.GetKey("w"))// && !thrusterWait)
         {
-            _RigidBody.AddForce(Vector2.up * thrusterSpeed);
-            thrusterWait = true;
+            transform.Translate(new Vector3(0, 2, 0) * Time.deltaTime * sideSpeed, Space.World);
+            //_RigidBody.AddForce(Vector2.up * thrusterSpeed);
+            //thrusterWait = true;
         }
     }
 }
