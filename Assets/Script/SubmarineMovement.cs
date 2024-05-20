@@ -35,10 +35,10 @@ public class SubmarineMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //if (transform.position.y > 20)
-        //{
-        //    transform.position = new Vector3(transform.position.x, 20.0f, transform.position.z);
-        //}
+        if (transform.position.y > 20)
+        {
+            transform.position = new Vector3(transform.position.x, 20.0f, transform.position.z);
+        }
         if (Input.GetKey("a"))
         {
             transform.Translate(new Vector3(-1, 0, 0) * Time.deltaTime * sideSpeed, Space.World);
@@ -51,11 +51,9 @@ public class SubmarineMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * sideSpeed, Space.World);
         }
-        if (Input.GetKey("w"))// && !thrusterWait)
+        if (Input.GetKey("w"))
         {
             transform.Translate(new Vector3(0, 2, 0) * Time.deltaTime * sideSpeed, Space.World);
-            //_RigidBody.AddForce(Vector2.up * thrusterSpeed);
-            //thrusterWait = true;
         }
     }
 }

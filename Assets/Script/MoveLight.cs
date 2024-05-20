@@ -10,7 +10,9 @@ public class MoveLight : MonoBehaviour
     public float RotationSpeed;
     public float LightSpeed;
     public Light2D subLight;
+ 
 
+    private Vector3 mousePos;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,23 +22,22 @@ public class MoveLight : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey("right"))
+        mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+
+        transform.up = direction;
+
+        if (Input.mouseScrollDelta.y < 0 && subLight.pointLightOuterRadius <= 15 && subLight.pointLightInnerRadius <= 13.35)
         {
-            transform.Rotate(new Vector3(0, 0, RotationSpeed) * Time.deltaTime, Space.World);
+            subLight.pointLightOuterRadius += LightSpeed;
+            subLight.pointLightInnerRadius += LightSpeed;
         }
-        if (Input.GetKey("left"))
+        if (Input.mouseScrollDelta.y > 0 && subLight.pointLightOuterRadius >= 7.5 && subLight.pointLightInnerRadius >= 5.85)
         {
-            transform.Rotate(new Vector3(0, 0, -RotationSpeed) * Time.deltaTime, Space.World);
-        }
-        if (Input.GetKey("down") && subLight.pointLightOuterRadius <= 15 && subLight.pointLightInnerRadius <= 11.7)
-        {
-            subLight.pointLightOuterRadius += Time.deltaTime * LightSpeed;
-            subLight.pointLightInnerRadius += Time.deltaTime * LightSpeed;
-        }
-        if (Input.GetKey("up") && subLight.pointLightOuterRadius >= 7.5 && subLight.pointLightInnerRadius >= 5.85)
-        {
-            subLight.pointLightOuterRadius -= Time.deltaTime * LightSpeed;
-            subLight.pointLightInnerRadius -= Time.deltaTime * LightSpeed;
+            subLight.pointLightOuterRadius -= LightSpeed;
+            subLight.pointLightInnerRadius -= LightSpeed;
         }
     }
 }
