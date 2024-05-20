@@ -35,10 +35,10 @@ public class SubmarineMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.y < 0)
-        {
-            transform.SetPositionAndRotation(new Vector3(0, 0, 0));
-        }
+        //if (transform.position.y > 20)
+        //{
+        //    transform.position = new Vector3(transform.position.x, 20.0f, transform.position.z);
+        //}
         if (Input.GetKey("a"))
         {
             transform.Translate(new Vector3(-1, 0, 0) * Time.deltaTime * sideSpeed, Space.World);
