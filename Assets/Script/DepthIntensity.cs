@@ -20,11 +20,13 @@ public class DepthIntensity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        GlobalLight.intensity = player.transform.position.y * 0.01f;
-        if (GlobalLight.intensity > 1f)
+        if(Input.GetKey("s") && GlobalLight.intensity > 0)
         {
-            GlobalLight.intensity = 1f;
+            GlobalLight.intensity -= 0.2f * Time.deltaTime;
+        }
+        if (Input.GetKey("w") && GlobalLight.intensity < 1 && player.transform.position.y > -30)
+        {
+            GlobalLight.intensity += 0.2f * Time.deltaTime;
         }
     }
 }

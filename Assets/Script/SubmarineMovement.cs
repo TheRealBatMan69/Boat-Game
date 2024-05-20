@@ -53,7 +53,7 @@ public class SubmarineMovement : MonoBehaviour
         }
         if (Input.GetKey("w"))
         {
-            transform.Translate(new Vector3(0, 2, 0) * Time.deltaTime * sideSpeed, Space.World);
+            transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * sideSpeed, Space.World);
         }
     }
 }
