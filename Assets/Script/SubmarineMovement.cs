@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class SubmarineMovement : MonoBehaviour
 {
+    private Rigidbody2D body;
+
+    // public float velocity;
+    public bool isMoving = false;
+
+    private float test;
+    private float currentPos;
+
     public float sideSpeed;
     public float sinkSpeed;
     public float thrusterSpeed;
 
-    private float thrusterTracker = 0;
-    public float thrusterWaitTime;
-    public bool thrusterWait = false;
-
-
     // Start is called before the first frame update
     void Start()
     {
-
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (thrusterWait)
+        // Debug.Log(body.velocity.y);
+        // velocity = body.velocity.y;
+        float currentPos = transform.position.y;
+        if (test == currentPos)
         {
-            thrusterTracker++;
-            if (thrusterTracker == thrusterWaitTime)
-            {
-                thrusterWait = false;
-                thrusterTracker = 0;
-            }
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
         }
     }
 
@@ -55,5 +60,9 @@ public class SubmarineMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * sideSpeed, Space.World);
         }
+
+        Debug.Log("Last: " + test + "    Current: " + currentPos);
+        test = transform.position.y;
+
     }
 }
