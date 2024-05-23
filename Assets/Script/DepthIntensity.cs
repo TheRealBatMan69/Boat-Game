@@ -21,7 +21,6 @@ public class DepthIntensity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Y Velocity: " + rb.velocity.y);
         if(Input.GetKey("s") && GlobalLight.intensity > 0 && rb.velocity.y != 0)
         {
             GlobalLight.intensity -= 0.2f * Time.deltaTime;

@@ -27,9 +27,6 @@ public class SubmarineMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(body.velocity.y);
-        // velocity = body.velocity.y;
-
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
 
@@ -57,26 +54,5 @@ public class SubmarineMovement : MonoBehaviour
        {
            body.velocity = Vector3.ClampMagnitude(body.velocity, limitVelocity);
        }
-
-        // if (Input.GetKey("a"))
-        // {
-        //     transform.Translate(new Vector3(-1, 0, 0) * Time.deltaTime * sideSpeed, Space.World);
-        // }
-        // if (Input.GetKey("d"))
-        // {
-        //     transform.Translate(new Vector3(1, 0, 0) * Time.deltaTime * sideSpeed, Space.World);
-        // }
-        // if (Input.GetKey("s"))
-        // {
-        //     transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * sideSpeed, Space.World);
-        // }
-        // if (Input.GetKey("w"))
-        // {
-        //     transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * sideSpeed, Space.World);
-        // }
-
-        Debug.Log("Last: " + test + "    Current: " + currentPos);
-        test = transform.position.y;
-
     }
 }
