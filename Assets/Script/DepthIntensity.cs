@@ -9,6 +9,7 @@ public class DepthIntensity : MonoBehaviour
 
     public Light2D GlobalLight;
     public Transform player;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +21,12 @@ public class DepthIntensity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("s") && GlobalLight.intensity > 0)
+        Debug.Log("Y Velocity: " + rb.velocity.y);
+        if(Input.GetKey("s") && GlobalLight.intensity > 0 && rb.velocity.y != 0)
         {
             GlobalLight.intensity -= 0.2f * Time.deltaTime;
         }
-        if (Input.GetKey("w") && GlobalLight.intensity < 1 && player.transform.position.y > -30)
+        if (Input.GetKey("w") && GlobalLight.intensity < 1 && player.transform.position.y > -30 && rb.velocity.y != 0)
         {
             GlobalLight.intensity += 0.2f * Time.deltaTime;
         }

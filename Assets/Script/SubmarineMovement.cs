@@ -16,6 +16,8 @@ public class SubmarineMovement : MonoBehaviour
     private float test;
     private float currentPos;
 
+    public float limitVelocity = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,11 @@ public class SubmarineMovement : MonoBehaviour
         }
 
         body.velocity = new Vector2 (moveHorizontal*moveSpeed*Time.deltaTime, moveVertical*moveSpeed*Time.deltaTime);
+
+       if (body.velocity.magnitude > limitVelocity)
+       {
+           body.velocity = Vector3.ClampMagnitude(body.velocity, limitVelocity);
+       }
 
         // if (Input.GetKey("a"))
         // {
