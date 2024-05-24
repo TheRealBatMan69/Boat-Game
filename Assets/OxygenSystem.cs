@@ -29,6 +29,6 @@ public class OxygenSystem : MonoBehaviour
         {
             currentOxygen += oxygenRegen * Time.deltaTime;
         }
-        Debug.Log("Current Oxygen: " + currentOxygen);
+        //Debug.Log("Current Oxygen: " + currentOxygen);
     }
 }

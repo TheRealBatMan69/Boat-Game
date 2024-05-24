@@ -52,6 +52,6 @@ public class MoveLight : MonoBehaviour
         {
             currentBattery -= batteryDecay * Time.deltaTime * (subLight.pointLightOuterRadius / 10);
         }
-        Debug.Log("Current Battery: " + currentBattery);
+        //Debug.Log("Current Battery: " + currentBattery);
     }
 }
