@@ -29,12 +29,12 @@ public class MoveLight : MonoBehaviour
 
         transform.up = direction;
 
-        if (Input.mouseScrollDelta.y < 0 && subLight.pointLightOuterRadius <= 15 && subLight.pointLightInnerRadius <= 13.35)
+        if (Input.mouseScrollDelta.y > 0 && subLight.pointLightOuterRadius <= 15 && subLight.pointLightInnerRadius <= 13.35)
         {
             subLight.pointLightOuterRadius += LightSpeed;
             subLight.pointLightInnerRadius += LightSpeed;
         }
-        if (Input.mouseScrollDelta.y > 0 && subLight.pointLightOuterRadius >= 7.5 && subLight.pointLightInnerRadius >= 5.85)
+        if (Input.mouseScrollDelta.y < 0 && subLight.pointLightOuterRadius >= 7.5 && subLight.pointLightInnerRadius >= 5.85)
         {
             subLight.pointLightOuterRadius -= LightSpeed;
             subLight.pointLightInnerRadius -= LightSpeed;
