@@ -14,7 +14,7 @@ public class TreasureSpawner : MonoBehaviour
     public int minTreasure;
     public int maxTreasure;
 
-    private Transform spawnPoint;
+    Vector2 spawnPoint;
     int treasure;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class TreasureSpawner : MonoBehaviour
     {
         treasure = Random.Range(minTreasure, maxTreasure);
 
-        for(int i = 0, i < treasure, i++)
+        for(int i = 0; i < treasure; i++)
         {
             SpawnTreasure();
         }
@@ -30,9 +30,10 @@ public class TreasureSpawner : MonoBehaviour
 
     void SpawnTreasure()
     {
-        spawnPoint.position.x = Random.Range(minX, maxX);
-        spawnPoint.position.y = Random.Range(minY, maxY);
+        Debug.Log("Treasure Spawned");
+        spawnPoint.x = Random.Range(minX, maxX);
+        spawnPoint.y = Random.Range(minY, maxY);
 
-        Instantiate(treasurePrefab, spawnPoint.position, Quaternion.identity)
+        Instantiate(treasurePrefab, spawnPoint, Quaternion.identity);
     }
 }
