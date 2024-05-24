@@ -7,7 +7,7 @@ public class OxygenSystem : MonoBehaviour
 
     public Transform player;
     public float maxOxygen;
-    public float currentOxygen;
+    private float currentOxygen;
     public float oxygenDecay;
     public float oxygenRegen;
 

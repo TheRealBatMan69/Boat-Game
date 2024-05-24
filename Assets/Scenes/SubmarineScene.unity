@@ -221,6 +221,9 @@ MonoBehaviour:
   RotationSpeed: 30
   LightSpeed: 0.5
   subLight: {fileID: 257908384}
+  player: {fileID: 0}
+  maxBattery: 100
+  batteryDecay: 5
 --- !u!43 &316689681
 Mesh:
   m_ObjectHideFlags: 0
@@ -484,7 +487,7 @@ MonoBehaviour:
   GlobalLight: {fileID: 337069907}
   player: {fileID: 1678183188}
   rb: {fileID: 1678183189}
---- !u!43 &405538312
+--- !u!43 &527667781
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1344,7 +1347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1678183188}
   maxOxygen: 100
-  currentOxygen: 0
   oxygenDecay: 5
   oxygenRegen: 5
 --- !u!1 &1709485431

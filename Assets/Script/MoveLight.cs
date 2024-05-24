@@ -10,13 +10,21 @@ public class MoveLight : MonoBehaviour
     public float RotationSpeed;
     public float LightSpeed;
     public Light2D subLight;
- 
+    public Transform player;
+
+    public float maxBattery;
+    private float currentBattery;
+    public float batteryDecay;
+
 
     private Vector3 mousePos;
     // Start is called before the first frame update
     void Start()
     {
         subLight = GetComponent<Light2D>();
+        player = GetComponent<Transform>();
+
+        currentBattery = maxBattery;
     }
 
     // Update is called once per frame
@@ -39,5 +47,11 @@ public class MoveLight : MonoBehaviour
             subLight.pointLightOuterRadius -= LightSpeed;
             subLight.pointLightInnerRadius -= LightSpeed;
         }
+
+        if(player.position.y < 20)
+        {
+            currentBattery -= batteryDecay * Time.deltaTime * (subLight.pointLightOuterRadius / 10);
+        }
+        Debug.Log("Current Battery: " + currentBattery);
     }
 }
