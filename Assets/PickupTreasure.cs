@@ -6,11 +6,14 @@ public class PickupTreasure : MonoBehaviour
 {
 
     public BoxCollider2D player;
+    private int questTracker;
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<BoxCollider2D>();
+        questTracker = 0;
     }
 
     // Update is called once per frame
@@ -23,7 +26,10 @@ public class PickupTreasure : MonoBehaviour
     {
         if (collision.tag == "Treasure")
         {
-            Debug.Log("Treasure Picked Up!");
+            questTracker++;
+            collision.gameObject.SetActive(false);
+            Debug.Log("Picked Up!");
+            Debug.Log("Quest Tracker: " + questTracker);
         }
     }
 }
