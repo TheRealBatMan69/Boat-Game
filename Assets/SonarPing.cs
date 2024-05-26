@@ -10,9 +10,7 @@ public class SonarPing : MonoBehaviour
     public Light2D sonarLight;
     public GameObject sonarCut;
 
-    public float sonarLightInnerRadius;
-    public float sonarLightOuterRadius;
-    public Vector3 sonarCutRadius;
+    public float sonarLightRadius;
 
     public float speed;
     private float cutSpeed;
@@ -25,10 +23,7 @@ public class SonarPing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sonarLight.intensity = 0f;
-        sonarLight.pointLightInnerRadius = 2f;
-        sonarLight.pointLightOuterRadius = 2f;
-        sonarCut.transform.localScale = new Vector2(0, 0);
+        ResetSonar();
         sonarCut.SetActive(false);
         pingSonar = false;
         cutSpeed = speed * 4;
@@ -39,9 +34,9 @@ public class SonarPing : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            Debug.Log("Ping1!");
+            ResetSonar();
             pingSonar = true;
-            Debug.Log("Ping2!");
+            Debug.Log("Ping!");
         }
     }
 
@@ -63,10 +58,19 @@ public class SonarPing : MonoBehaviour
             {
                 sonarLight.intensity += intensitySpeed * Time.deltaTime;
             } 
-            if (sonarLight.pointLightOuterRadius >= sonarLightOuterRadius)
+            if (sonarLight.pointLightOuterRadius >= sonarLightRadius)
             {
+                sonarCut.SetActive(false);
                 pingSonar = false;
             }
         }
+    }
+
+    void ResetSonar()
+    {
+        sonarLight.intensity = 0f;
+        sonarLight.pointLightInnerRadius = 2f;
+        sonarLight.pointLightOuterRadius = 2f;
+        sonarCut.transform.localScale = new Vector2(0, 0);
     }
 }

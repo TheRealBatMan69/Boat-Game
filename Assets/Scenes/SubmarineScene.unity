@@ -164,7 +164,7 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
+  m_LightOrder: 1
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0000000025798099
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0000000025798099
   m_ShapePath:
   - {x: -0.5, y: -0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
@@ -1327,7 +1327,7 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!43 &1380660169
+--- !u!43 &1246292705
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1623,11 +1623,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonarLight: {fileID: 337888511}
   sonarCut: {fileID: 1832922052}
-  sonarLightInnerRadius: 19.5
-  sonarLightOuterRadius: 20
-  sonarCutRadius: {x: 21, y: 21, z: 0}
-  speed: 2
-  intensitySpeed: 2
+  sonarLightRadius: 25
+  speed: 10
+  intensitySpeed: 1
 --- !u!1 &1709485431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1681,7 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
+  m_LightOrder: 1
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
@@ -1886,7 +1884,7 @@ GameObject:
   - component: {fileID: 1832922054}
   - component: {fileID: 1832922053}
   - component: {fileID: 1832922055}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Sonar Cut Out
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1931,8 +1929,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1719633627
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -1979,7 +1977,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 1
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 0000000025798099
   m_ShapePath:
   - {x: -0.35324493, y: -0.38274378, z: 0}
   - {x: -0.51435924, y: 0.01764137, z: 0}

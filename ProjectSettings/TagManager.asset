@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cut
+    uniqueID: 2575333669
+    locked: 0
