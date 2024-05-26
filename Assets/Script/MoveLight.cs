@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class MoveLight : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class MoveLight : MonoBehaviour
     public GameObject spotLight;
     public GameObject areaLight;
 
+    public Slider batterySlider;
+
     private Vector3 mousePos;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,9 @@ public class MoveLight : MonoBehaviour
         player = GetComponent<Transform>();
 
         currentBattery = maxBattery;
+
+        batterySlider.maxValue = maxBattery;
+        batterySlider.value = maxBattery;
     }
 
     // Update is called once per frame
@@ -65,6 +71,8 @@ public class MoveLight : MonoBehaviour
             spotLight.SetActive(true);
             areaLight.SetActive(true);
         }
+
+        batterySlider.value = currentBattery;
         //Debug.Log("Current Battery: " + currentBattery);
     }
 }
