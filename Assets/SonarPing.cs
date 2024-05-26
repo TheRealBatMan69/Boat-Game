@@ -53,11 +53,11 @@ public class SonarPing : MonoBehaviour
             sonarLight.pointLightInnerRadius += speed * Time.deltaTime;
             sonarLight.pointLightOuterRadius += speed * Time.deltaTime;
             sonarCut.transform.localScale += scaleChange;
-            if (sonarLight.intensity != 1f)
+            if (sonarLight.intensity <= 1f)
             {
                 sonarLight.intensity += intensitySpeed * Time.deltaTime;
             } 
-            if (sonarLight.pointLightOuterRadius == sonarLightOuterRadius)
+            if (sonarLight.pointLightOuterRadius >= sonarLightOuterRadius)
             {
                 pingSonar = false;
             }
