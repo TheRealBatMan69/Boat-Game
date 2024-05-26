@@ -159,7 +159,7 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!43 &254179052
+--- !u!43 &43119490
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2476,8 +2476,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonarLight: {fileID: 337888511}
   sonarCut: {fileID: 1832922052}
-  sonarLightRadius: 25
-  speed: 10
+  sonarLightRadius: 35
+  speed: 20
   intensitySpeed: 1
 --- !u!1 &1709485431
 GameObject:
