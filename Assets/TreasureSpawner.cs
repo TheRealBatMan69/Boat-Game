@@ -26,6 +26,12 @@ public class TreasureSpawner : MonoBehaviour
         {
             SpawnTreasure();
         }
+
+        Debug.Log("Big Treasure Spawned");
+        spawnPoint.x = Random.Range(minX, maxX);
+        spawnPoint.y = -78.3f;
+
+        Instantiate(treasurePrefab, spawnPoint, Quaternion.identity);
     }
 
     void SpawnTreasure()

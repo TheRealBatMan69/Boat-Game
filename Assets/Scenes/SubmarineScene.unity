@@ -1236,10 +1236,10 @@ MonoBehaviour:
   minX: -100
   maxX: 100
   minY: -70
-  maxY: 0
+  maxY: -30
   treasurePrefab: {fileID: 2414797122875387063, guid: 7429f675bfed8a548a4c2e0274d960a2, type: 3}
   minTreasure: 3
-  maxTreasure: 5
+  maxTreasure: 8
 --- !u!4 &797300001
 Transform:
   m_ObjectHideFlags: 0
