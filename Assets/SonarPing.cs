@@ -12,10 +12,12 @@ public class SonarPing : MonoBehaviour
 
     public float sonarLightInnerRadius;
     public float sonarLightOuterRadius;
-    public Vector2 sonarCutRadius;
+    public Vector3 sonarCutRadius;
 
     public float speed;
     public float intensitySpeed;
+
+    private Vector3 scaleChange;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +30,30 @@ public class SonarPing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown("space"))
         {
-            sonarCut.SetActive(true);
-            
-            Debug.Log("Ping!");
+            Debug.Log("Ping1!");
+            pingRadar();
+            Debug.Log("Ping2!");
+        }
+    }
+
+    void pingRadar()
+    {
+        sonarCut.SetActive(true);
+
+        while(sonarLight.pointLightOuterRadius != sonarLightOuterRadius)
+        {
+           scaleChange = new Vector3(speed * Time.deltaTime, speed * Time.deltaTime, 0);
+            sonarLight.pointLightInnerRadius += speed * Time.deltaTime;
+            sonarLight.pointLightOuterRadius += speed * Time.deltaTime;
+            sonarCut.transform.localScale += scaleChange;
+            if (sonarLight.intensity != 1f)
+            {
+                sonarLight.intensity += intensitySpeed * Time.deltaTime;
+            } 
         }
     }
 }
