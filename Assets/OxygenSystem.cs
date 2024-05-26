@@ -29,6 +29,11 @@ public class OxygenSystem : MonoBehaviour
         {
             currentOxygen += oxygenRegen * Time.deltaTime;
         }
+        
+        if(currentOxygen <= 0)
+        {
+            Debug.Log("Dead");
+        }
         //Debug.Log("Current Oxygen: " + currentOxygen);
     }
 }

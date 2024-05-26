@@ -16,6 +16,8 @@ public class MoveLight : MonoBehaviour
     private float currentBattery;
     public float batteryDecay;
 
+    public GameObject spotLight;
+    public GameObject areaLight;
 
     private Vector3 mousePos;
     // Start is called before the first frame update
@@ -51,6 +53,17 @@ public class MoveLight : MonoBehaviour
         if(player.position.y < 20)
         {
             currentBattery -= batteryDecay * Time.deltaTime * (subLight.pointLightOuterRadius / 10);
+        }
+
+        if(currentBattery <= 0)
+        {
+            spotLight.SetActive(false);
+            areaLight.SetActive(false);
+        }
+        else
+        {
+            spotLight.SetActive(true);
+            areaLight.SetActive(true);
         }
         //Debug.Log("Current Battery: " + currentBattery);
     }
