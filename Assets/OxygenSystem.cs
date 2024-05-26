@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OxygenSystem : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class OxygenSystem : MonoBehaviour
     public float oxygenDecay;
     public float oxygenRegen;
 
+    public Slider oxygenSlider;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Transform>();
         currentOxygen = maxOxygen;
+        oxygenSlider.maxValue = maxOxygen;
+        oxygenSlider.value = maxOxygen;
     }
 
     // Update is called once per frame
@@ -30,6 +35,8 @@ public class OxygenSystem : MonoBehaviour
             currentOxygen += oxygenRegen * Time.deltaTime;
         }
         
+        oxygenSlider.value = currentOxygen;
+
         if(currentOxygen <= 0)
         {
             Debug.Log("Dead");

@@ -28,7 +28,14 @@ public class PickupTreasure : MonoBehaviour
         {
             questTracker++;
             collision.gameObject.SetActive(false);
-            Debug.Log("Picked Up!");
+            Debug.Log(collision.tag + " Picked Up!");
+            Debug.Log("Quest Tracker: " + questTracker);
+        }
+        if (collision.tag == "Big Treasure")
+        {
+            questTracker++;
+            collision.gameObject.SetActive(false);
+            Debug.Log(collision.tag + " Picked Up!");
             Debug.Log("Quest Tracker: " + questTracker);
         }
     }

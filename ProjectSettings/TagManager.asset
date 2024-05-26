@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Scene2
   - Treasure
+  - Big Treasure
   layers:
   - Default
   - TransparentFX
