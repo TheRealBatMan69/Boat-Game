@@ -38,6 +38,7 @@ public class SonarPing : MonoBehaviour
         {
             ResetSonar();
             pingSonar = true;
+            lightScript.currentBattery -= 10f;
             Debug.Log("Ping!");
         }
     }

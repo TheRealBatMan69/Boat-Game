@@ -55,10 +55,6 @@ public class MoveLight : MonoBehaviour
             subLight.pointLightOuterRadius -= LightSpeed;
             subLight.pointLightInnerRadius -= LightSpeed;
         }
-        if (Input.GetKeyDown("space"))
-        {
-            currentBattery -= 10f;
-        }
 
         if(player.position.y < 20)
         {
