@@ -7,6 +7,8 @@ using UnityEngine.Rendering.Universal;
 public class SonarPing : MonoBehaviour
 {
 
+    public MoveLight lightScript;
+
     public Light2D sonarLight;
     public GameObject sonarCut;
 
@@ -32,7 +34,7 @@ public class SonarPing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && !pingSonar && lightScript.currentBattery > 10)
         {
             ResetSonar();
             pingSonar = true;
