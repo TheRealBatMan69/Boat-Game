@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PickupTreasure : MonoBehaviour
 {
 
     public BoxCollider2D player;
-    private int questTracker;
-
+    public float money;
+    public TMP_Text moneyText;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<BoxCollider2D>();
-        questTracker = 0;
+        money = 0f;
     }
 
     // Update is called once per frame
@@ -26,17 +27,18 @@ public class PickupTreasure : MonoBehaviour
     {
         if (collision.tag == "Treasure")
         {
-            questTracker++;
+            money += 50f;
             collision.gameObject.SetActive(false);
             Debug.Log(collision.tag + " Picked Up!");
-            Debug.Log("Quest Tracker: " + questTracker);
+            Debug.Log("Money: " + money);
         }
         if (collision.tag == "Big Treasure")
         {
-            questTracker++;
+            money += 100f;
             collision.gameObject.SetActive(false);
             Debug.Log(collision.tag + " Picked Up!");
-            Debug.Log("Quest Tracker: " + questTracker);
+
         }
+        moneyText.text = "£ " + money.ToString("0");
     }
 }
