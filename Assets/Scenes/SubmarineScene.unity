@@ -2520,6 +2520,19 @@ MonoBehaviour:
   sonarLightRadius: 35
   speed: 20
   intensitySpeed: 1
+--- !u!114 &1678183202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548645519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a30359d710c014d9a9196ee2eebdab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &1709485431
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,6 +4162,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.21633327
       objectReference: {fileID: 0}
+    - target: {fileID: 8761030253696575434, guid: d5c5a96c9f7fe514d81d0c727ebbb52a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761030253696575434, guid: d5c5a96c9f7fe514d81d0c727ebbb52a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4174,6 +4195,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4542920092201442946, guid: d5c5a96c9f7fe514d81d0c727ebbb52a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1678183198}
+    - targetCorrespondingSourceObject: {fileID: 4542920092201442946, guid: d5c5a96c9f7fe514d81d0c727ebbb52a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1678183202}
   m_SourcePrefab: {fileID: 100100000, guid: d5c5a96c9f7fe514d81d0c727ebbb52a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

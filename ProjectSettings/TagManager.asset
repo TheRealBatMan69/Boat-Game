@@ -7,6 +7,7 @@ TagManager:
   - Scene2
   - Treasure
   - Big Treasure
+  - fish
   layers:
   - Default
   - TransparentFX
