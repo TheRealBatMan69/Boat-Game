@@ -10,6 +10,7 @@ public class TreasureSpawner : MonoBehaviour
     public int maxY;
 
     public GameObject treasurePrefab;
+    public GameObject bigTreasurePrefab;
 
     public int minTreasure;
     public int maxTreasure;
@@ -31,8 +32,7 @@ public class TreasureSpawner : MonoBehaviour
         spawnPoint.x = Random.Range(minX, maxX);
         spawnPoint.y = -78.3f;
 
-        GameObject bigTreasure = Instantiate(treasurePrefab, spawnPoint, Quaternion.identity);
-        bigTreasure.tag = "Big Treasure";
+        GameObject bigTreasure = Instantiate(bigTreasurePrefab, spawnPoint, Quaternion.identity);
     }
 
     void SpawnTreasure()
